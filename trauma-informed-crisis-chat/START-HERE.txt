@@ -1,0 +1,56 @@
+STILLWATER - trauma-informed crisis helpline chat
+=================================================
+
+RUN IT IN XAMPP (this is the college version)
+---------------------------------------------
+1. Copy the folder "app-php" into  C:\xampp\htdocs\  and rename it to  stillwater
+   Result:  C:\xampp\htdocs\stillwater\index.php
+2. Open XAMPP Control Panel -> Start Apache   (MySQL not needed for the default mode)
+3. Open in the browser:   http://localhost/stillwater/
+
+Nothing has to be imported. The database file is created automatically inside
+app-php\storage\ the first time the page loads.
+
+TO SHOW IT IN phpMyAdmin (good for report screenshots)
+------------------------------------------------------
+1. http://localhost/phpmyadmin -> New -> database name: stillwater -> Create
+2. Import -> choose  app-php\database\schema-mysql.sql  -> Go
+3. Open  app-php\includes\config.php  and change
+       'driver' => 'sqlite',
+   to  'driver' => 'mysql',
+4. Reload the app and chat once. Open the "sessions" and "escalations" tables.
+
+OBSERVER DASHBOARD (evaluation screen)
+--------------------------------------
+http://localhost/stillwater/observer.php
+passphrase: stillwater-demo      (change it in includes\config.php before submitting)
+
+RUN IT IN VS CODE (Node build, for a live demo link)
+----------------------------------------------------
+cd app-node
+npm install
+npm start        ->  http://localhost:3000
+npm test         ->  12 behaviour tests
+
+TESTS FOR THE PHP BUILD
+-----------------------
+Open a terminal in app-php and run:
+   php tools\test-cases.php      (12 of 12 cases must pass)
+   php tools\tone-lint.php       (58 strings, 0 failures - checks the tone rules)
+
+READ FIRST (report material)
+----------------------------
+README.md
+docs\02-trauma-informed-design.md   <- the 6 principles mapped to the screens
+docs\03-tone-guide.md               <- the bad-vs-good rewrite table
+docs\04-escalation-ladder.md        <- the 4 tiers and why offers beat redirects
+docs\05-anonymity-policy.md         <- what is stored and the code that proves it
+docs\06-test-cases.md               <- the test evidence tables
+docs\08-viva-questions.md           <- rehearse these before the review
+
+BEFORE YOU SUBMIT
+-----------------
+- Change 'observer_key' in app-php\includes\config.php
+- Verify the helpline numbers (they change): Tele-MANAS 14416, KIRAN 1800-599-0019
+- Keep the disclaimer: this is an academic prototype, not a clinical service
+- Push to GitHub with meaningful commits (do not upload node_modules or the .sqlite file)

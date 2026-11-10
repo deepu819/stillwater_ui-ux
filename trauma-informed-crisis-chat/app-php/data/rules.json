@@ -1,0 +1,914 @@
+{
+  "meta": {
+    "name": "Stillwater tone and risk rules",
+    "version": "1.0.0",
+    "note": "Every sentence the guide can say lives in this file, so the tone can be reviewed, linted (tools/tone-lint.php) and translated without touching PHP or JavaScript. Both backends (PHP and Node) read this same file.",
+    "principles": [
+      "No question in the first reply: a question is a demand for an answer.",
+      "No advice unless it is asked for, and then as an offer, never an instruction.",
+      "No exclamation marks, no 'at least', no 'others have it worse'.",
+      "Every offer carries an equal-weight way to decline."
+    ]
+  },
+  "categories": [
+    {
+      "id": "imminent_risk",
+      "tier": 3,
+      "label": "Imminent risk",
+      "terms": [
+        "kill myself",
+        "killing myself",
+        "kill my self",
+        "end my life",
+        "ending my life",
+        "end it all",
+        "want to die",
+        "wanna die",
+        "wanted to die",
+        "don't want to live",
+        "dont want to live",
+        "do not want to live",
+        "not want to live anymore",
+        "no reason to live",
+        "nothing to live for",
+        "better off dead",
+        "better off without me",
+        "take my own life",
+        "suicide",
+        "suicidal",
+        "commit suicide",
+        "hang myself",
+        "overdose",
+        "cut my wrists",
+        "slit my wrists",
+        "jump off",
+        "shoot myself",
+        "kill my self tonight",
+        "have a plan to",
+        "wrote a note",
+        "final goodbye",
+        "goodbye forever",
+        "this is my last message",
+        "marna chahta",
+        "marna chahti",
+        "mar jaana",
+        "mar jana",
+        "mar jaunga",
+        "mar jaungi",
+        "jeena nahi",
+        "jeena nahin",
+        "jeene ka mann nahi",
+        "khatam kar",
+        "khatam karna",
+        "aatmahatya",
+        "atmahatya",
+        "phansi",
+        "phasi laga",
+        "sachna",
+        "sachcha",
+        "sayi",
+        "saayilla",
+        "bidalla",
+        "jeelade",
+        "mara beku",
+        "saagillade",
+        "سچنا",
+        "自杀",
+        "खुदकुशी",
+        "आत्महत्या",
+        "ಸಾಯಬೇಕು",
+        "ಸಾಯು",
+        "சாகணும்",
+        "saaybeku",
+        "saayabeku",
+        "saaythini",
+        "saaythini anstide",
+        "saaybeko",
+        "marana",
+        "marಣ",
+        "sach jaunga",
+        "mar jaana hai",
+        "marna hai",
+        "jeena nahi hai",
+        "khatam kar dunga",
+        "aatmhatya kar",
+        "phansi laga",
+        "vish kha",
+        "kudikku",
+        "kollu",
+        "kolluve",
+        "saavu",
+        "savum",
+        "sayavendi",
+        "irukka vendaam"
+      ]
+    },
+    {
+      "id": "self_harm_urge",
+      "tier": 2,
+      "label": "Self-harm urge",
+      "terms": [
+        "self harm",
+        "self-harm",
+        "hurting myself",
+        "hurt myself",
+        "cutting myself",
+        "cut myself",
+        "burn myself",
+        "punish myself",
+        "starve myself",
+        "slash",
+        "harm myself",
+        "kesh katna",
+        "khud ko chot",
+        "khud ko harm"
+      ]
+    },
+    {
+      "id": "abuse_safety",
+      "tier": 2,
+      "label": "Abuse or unsafe situation",
+      "terms": [
+        "he hits me",
+        "she hits me",
+        "beats me",
+        "beat me",
+        "hit me",
+        "touches me",
+        "raped",
+        "rape",
+        "molested",
+        "assaulted",
+        "sexual abuse",
+        "abuses me",
+        "abusing me",
+        "threatened me",
+        "threatening me",
+        "afraid of him",
+        "afraid of her",
+        "afraid at home",
+        "scared to go home",
+        "not safe at home",
+        "mar pitai",
+        "maar peet",
+        "peeta hai",
+        "chhedta hai",
+        "kunta",
+        "hodeyuttene",
+        "bedi"
+      ]
+    },
+    {
+      "id": "hopelessness",
+      "tier": 2,
+      "label": "Hopelessness",
+      "terms": [
+        "hopeless",
+        "no hope",
+        "nothing will change",
+        "never get better",
+        "worthless",
+        "useless",
+        "pointless",
+        "what's the point",
+        "whats the point",
+        "no one would notice",
+        "nobody would notice",
+        "nobody cares",
+        "no one cares",
+        "tired of living",
+        "tired of being alive",
+        "can't go on",
+        "cant go on",
+        "cannot go on",
+        "give up",
+        "given up",
+        "burden to everyone",
+        "i am a burden",
+        "ummeed nahi",
+        "koi farak nahi",
+        "koi nahi hai",
+        "thak gaya hoon zindagi se",
+        "no future",
+        "nothing good will happen",
+        "life is pointless",
+        "i am done with life",
+        "fed up of life",
+        "life meaningless",
+        "life waste",
+        "life waste aagide"
+      ]
+    },
+    {
+      "id": "panic",
+      "tier": 1,
+      "label": "Panic or overwhelm",
+      "terms": [
+        "panic",
+        "panic attack",
+        "can't breathe",
+        "cant breathe",
+        "heart is racing",
+        "heart racing",
+        "shaking",
+        "i am shaking",
+        "hands are shaking",
+        "chest pain",
+        "feel like dying",
+        "no air",
+        "suffocating",
+        "everything is too much",
+        "too much",
+        "overwhelmed",
+        "ghutan",
+        "saans nahi",
+        "dil tez",
+        "bhay",
+        "aata",
+        "gabharaha",
+        "i feel like dying",
+        "i think i am dying",
+        "dizzy",
+        "breathless"
+      ]
+    },
+    {
+      "id": "grief_loss",
+      "tier": 1,
+      "label": "Grief and loss",
+      "terms": [
+        "he died",
+        "she died",
+        "passed away",
+        "death of",
+        "funeral",
+        "lost my mother",
+        "lost my father",
+        "lost my friend",
+        "lost him",
+        "lost her",
+        "miss my mother",
+        "miss my father",
+        "miss him",
+        "miss her",
+        "grief",
+        "broken heart",
+        "freaking out",
+        "avour mom died",
+        "guilt",
+        "mahaprasthan",
+        "no more my",
+        "yaad aati hai",
+        "guzaar gaya"
+      ]
+    },
+    {
+      "id": "self_blame",
+      "tier": 1,
+      "label": "Self-blame",
+      "terms": [
+        "my fault",
+        "it's my fault",
+        "its my fault",
+        "all my fault",
+        "i ruined",
+        "i destroy everything",
+        "i am useless",
+        "i am a failure",
+        "i am stupid",
+        "i hate myself",
+        "i am pathetic",
+        "i am weak",
+        "i deserve this",
+        "i deserve to suffer",
+        "galti meri hai",
+        "main hi galat",
+        "ghatiya hoon",
+        "nanna tappu",
+        "nanu tappu",
+        "i am the problem",
+        "everything is my fault",
+        "i spoil everything",
+        "i mess everything up"
+      ]
+    },
+    {
+      "id": "isolation",
+      "tier": 1,
+      "label": "Isolation",
+      "terms": [
+        "nobody to talk to",
+        "no one to talk to",
+        "no friends",
+        "nobody likes me",
+        "no one likes me",
+        "invisible",
+        "nobody knows",
+        "left out",
+        "alone",
+        "i am alone",
+        "lonely",
+        "loneliness",
+        "by myself",
+        "no friends left",
+        "akela",
+        "akeli",
+        "koi nahi",
+        "eko",
+        "ekathe",
+        "yaro illa",
+        "no one talks to me",
+        "nobody talks to me",
+        "no one understands",
+        "nobody understands",
+        "nobody texts me",
+        "alone at home",
+        "koi baat nahi karta",
+        "yaro maatadalla"
+      ]
+    },
+    {
+      "id": "anger",
+      "tier": 1,
+      "label": "Anger",
+      "terms": [
+        "angry",
+        "furious",
+        "rage",
+        "i want to scream",
+        "want to break",
+        "hate everyone",
+        "fed up",
+        "sick of it",
+        "so done",
+        "gussa",
+        "chid",
+        "kopa",
+        "yeno haal"
+      ]
+    },
+    {
+      "id": "relationship",
+      "tier": 1,
+      "label": "Relationship distress",
+      "terms": [
+        "broke up",
+        "breakup",
+        "break up",
+        "he left me",
+        "she left me",
+        "divorced",
+        "divorce",
+        "cheated on me",
+        "cheating",
+        "rejected me",
+        "rejection",
+        "fight with my",
+        "quarrel",
+        "fought with",
+        "he blocked me",
+        "she blocked me",
+        "breakup ho gaya",
+        "chhod diya",
+        "munde aagide"
+      ]
+    },
+    {
+      "id": "academic_pressure",
+      "tier": 1,
+      "label": "Study and work pressure",
+      "terms": [
+        "exam",
+        "exams",
+        "results",
+        "failed",
+        "failure",
+        "backlog",
+        "arrears",
+        "study pressure",
+        "parents pressure",
+        "job",
+        "lost my job",
+        "fired",
+        "work pressure",
+        "boss",
+        "deadline",
+        "placement",
+        "not placed",
+        "fail ho gaya",
+        "pareekshe",
+        "ettilla",
+        "nanna rishya",
+        "marks",
+        "bad marks",
+        "low marks",
+        "scolded",
+        "shouting at home",
+        "parents shouting",
+        "parents scold",
+        "result",
+        "percent",
+        "percentage",
+        "ranks",
+        "comparison",
+        "tuition"
+      ]
+    },
+    {
+      "id": "physical_health",
+      "tier": 1,
+      "label": "Physical health worry",
+      "terms": [
+        "chest pain",
+        "sick",
+        "illness",
+        "diagnosis",
+        "cancer",
+        "hospital",
+        "surgery",
+        "pain everywhere",
+        "sleep",
+        "no sleep",
+        "cannot sleep",
+        "can't sleep",
+        "cant sleep",
+        "not eating",
+        "not eating anything"
+      ]
+    },
+    {
+      "id": "help_seeking",
+      "tier": 0,
+      "label": "Asking for help",
+      "terms": [
+        "help me",
+        "i need help",
+        "what should i do",
+        "what do i do",
+        "any advice",
+        "advice",
+        "talk to someone",
+        "speak to someone",
+        "connect me",
+        "human",
+        "counsellor",
+        "counselor",
+        "therapist",
+        "helpline",
+        "show me help",
+        "i want help",
+        "madad",
+        "sahaaya",
+        "sahaya"
+      ]
+    },
+    {
+      "id": "meta",
+      "tier": 0,
+      "label": "About this chat",
+      "terms": [
+        "who are you",
+        "what is this",
+        "are you a bot",
+        "are you human",
+        "are you real",
+        "is this a robot",
+        "what do you do",
+        "your name",
+        "is this saved",
+        "is this private",
+        "is this anonymous",
+        "will anyone know",
+        "kaun ho",
+        "ye kya hai",
+        "bot ho"
+      ]
+    },
+    {
+      "id": "stuck",
+      "tier": 0,
+      "label": "Cannot find words",
+      "terms": [
+        "i don't know what to say",
+        "i dont know what to say",
+        "idk what to say",
+        "dont know what to say",
+        "don't know what to say",
+        "nothing to say",
+        "i can't explain",
+        "i cant explain",
+        "can't explain",
+        "hard to explain",
+        "no words",
+        "i dont know",
+        "i don't know",
+        "pata nahi",
+        "gottilla",
+        "en helbeku",
+        "confused"
+      ]
+    },
+    {
+      "id": "stay",
+      "tier": 0,
+      "label": "Asking for company",
+      "terms": [
+        "stay with me",
+        "just stay with me",
+        "stay here",
+        "don't go",
+        "dont go",
+        "please stay",
+        "don't leave",
+        "dont leave",
+        "be with me",
+        "jara ruko",
+        "irru"
+      ]
+    },
+    {
+      "id": "tired",
+      "tier": 0,
+      "label": "Fatigue",
+      "terms": [
+        "i am tired",
+        "im tired",
+        "so tired",
+        "exhausted",
+        "drained",
+        "no energy",
+        "burned out",
+        "burnt out",
+        "can't think",
+        "cant think",
+        "sleep all day",
+        "thak",
+        "susthu",
+        "sakku"
+      ]
+    },
+    {
+      "id": "thanks",
+      "tier": 0,
+      "label": "Gratitude",
+      "terms": [
+        "thank you",
+        "thanks",
+        "thank u",
+        "thankyou",
+        "thx",
+        "dhanyawad",
+        "shukriya",
+        "dhanyavada",
+        "nandri"
+      ]
+    },
+    {
+      "id": "feeling_better",
+      "tier": 0,
+      "label": "Feeling steadier",
+      "terms": [
+        "feeling better",
+        "feel better",
+        "i am okay now",
+        "i'm okay now",
+        "i am ok now",
+        "im ok now",
+        "calmer now",
+        "slightly better",
+        "better now",
+        "theek hoon",
+        "shaant",
+        "swalpa better",
+        "not that bad now",
+        "settled down"
+      ]
+    },
+    {
+      "id": "goodbye",
+      "tier": 0,
+      "label": "Leaving",
+      "terms": [
+        "goodbye",
+        "bye",
+        "i have to go",
+        "i should go",
+        "talk later",
+        "signing off",
+        "alvida",
+        "hogi",
+        "howdu hogthini"
+      ]
+    }
+  ],
+  "negation_window": 4,
+  "negation_terms": [
+    "not",
+    "never",
+    "no",
+    "dont",
+    "don't",
+    "didnt",
+    "didn't",
+    "isnt",
+    "isn't",
+    "wasnt",
+    "wasn't",
+    "wouldn't",
+    "wont",
+    "won't",
+    "without",
+    "nahi",
+    "nahin",
+    "illa",
+    "alla"
+  ],
+  "replies": {
+    "imminent_risk": [
+      {
+        "id": "im-1",
+        "text": "I'm here. Thank you for telling me instead of holding it alone."
+      },
+      {
+        "id": "im-2",
+        "text": "I've read what you wrote, all of it. I'm not going anywhere."
+      },
+      {
+        "id": "im-3",
+        "text": "That sounds like it has been building for a long time. I'm still here with you."
+      }
+    ],
+    "imminent_risk_follow": [
+      {
+        "id": "imf-1",
+        "text": "You don't have to solve anything in this conversation. I'd just like to keep you company right now."
+      },
+      {
+        "id": "imf-2",
+        "text": "Nothing you say here will be judged. Take your time with me."
+      }
+    ],
+    "self_harm_urge": [
+      {
+        "id": "sh-1",
+        "text": "That urge sounds exhausting to hold, and I'm glad you told me instead of carrying it quietly."
+      },
+      {
+        "id": "sh-2",
+        "text": "It makes sense that your body is looking for a way to make the pain stop. I'm here with you."
+      }
+    ],
+    "abuse_safety": [
+      {
+        "id": "ab-1",
+        "text": "I believe you. What you described is not something you caused, and it is not something you have to work out alone."
+      },
+      {
+        "id": "ab-2",
+        "text": "Thank you for trusting me with that. I'm taking it seriously. What happened is not your fault."
+      }
+    ],
+    "hopelessness": [
+      {
+        "id": "hp-1",
+        "text": "When nothing looks like it will change, even getting through today takes effort. I see that."
+      },
+      {
+        "id": "hp-2",
+        "text": "That kind of tiredness is real. It isn't laziness, and it isn't weakness."
+      },
+      {
+        "id": "hp-3",
+        "text": "Hopelessness lies to people. It tells them they are a burden and that it will never lift. I don't think it's telling you the truth."
+      }
+    ],
+    "panic": [
+      {
+        "id": "pn-1",
+        "text": "That sounds frightening. Your body is reacting to danger it thinks is here right now, and it is very hard to think through that."
+      },
+      {
+        "id": "pn-2",
+        "text": "Panic feels like dying while being completely safe. It is terrible, and it does pass."
+      }
+    ],
+    "grief_loss": [
+      {
+        "id": "gr-1",
+        "text": "I'm sorry. There is nothing that makes that lighter, and you don't have to be fine about it here."
+      },
+      {
+        "id": "gr-2",
+        "text": "Grief doesn't keep to a schedule. Whatever you're feeling right now is an honest reaction, not a wrong one."
+      }
+    ],
+    "self_blame": [
+      {
+        "id": "sb-1",
+        "text": "You are allowed to have made mistakes and still be worth something. Both are true at once."
+      },
+      {
+        "id": "sb-2",
+        "text": "That voice that says you deserve this is not a fair judge. It's just loud."
+      }
+    ],
+    "isolation": [
+      {
+        "id": "is-1",
+        "text": "Being alone with this makes everything heavier. For the next few minutes you are not alone in it."
+      },
+      {
+        "id": "is-2",
+        "text": "It's strange how a room full of people can feel emptier than a message from one stranger. I'm glad you wrote."
+      }
+    ],
+    "anger": [
+      {
+        "id": "an-1",
+        "text": "Anger usually shows up when something important to you has been treated badly. It's information, not a flaw."
+      },
+      {
+        "id": "an-2",
+        "text": "That sounds like a lot of pressure that has been building for a while."
+      }
+    ],
+    "relationship": [
+      {
+        "id": "rl-1",
+        "text": "Being left or let go of leaves a very specific kind of tiredness behind. I'm sorry."
+      },
+      {
+        "id": "rl-2",
+        "text": "That hurt is real, and it doesn't need to be reasonable to be real."
+      }
+    ],
+    "academic_pressure": [
+      {
+        "id": "ac-1",
+        "text": "Marks and deadlines can start to feel like they are measuring your whole worth. They are not."
+      },
+      {
+        "id": "ac-2",
+        "text": "That pressure must be very loud at home and inside your head at the same time."
+      }
+    ],
+    "physical_health": [
+      {
+        "id": "ph-1",
+        "text": "Worry that lives in your body is hard to argue with. I'm sorry you're carrying it."
+      },
+      {
+        "id": "ph-2",
+        "text": "Not sleeping makes everything else harder. That's not you failing at anything."
+      }
+    ],
+    "help_seeking": [
+      {
+        "id": "hs-1",
+        "text": "I can show you people who do this well, any time of day. I'll only bring them up if you want me to."
+      },
+      {
+        "id": "hs-2",
+        "text": "There are people trained for exactly this, and reaching them costs nothing. Want me to put their details on the screen?"
+      }
+    ],
+    "meta": [
+      {
+        "id": "mt-1",
+        "text": "I'm a simple text-based guide, not a person and not a therapist. I won't ask you to explain yourself, and I won't judge you."
+      },
+      {
+        "id": "mt-2",
+        "text": "This is a quiet place to put things down. Nothing here asks for your name, and nothing is kept unless you ask me to keep it."
+      }
+    ],
+    "stuck": [
+      {
+        "id": "st-1",
+        "text": "That's alright. We can just sit here. Nothing is expected of you in this conversation."
+      },
+      {
+        "id": "st-2",
+        "text": "You don't have to find the right words. Whatever comes out is enough."
+      }
+    ],
+    "tired": [
+      {
+        "id": "tr-1",
+        "text": "Being that tired is a full body thing. It isn't something to push through or fix in one conversation."
+      },
+      {
+        "id": "tr-2",
+        "text": "Rest is not something you have to earn. You're allowed to stop for a while."
+      }
+    ],
+    "thanks": [
+      {
+        "id": "tk-1",
+        "text": "You don't have to thank me. I'm glad you're here."
+      },
+      {
+        "id": "tk-2",
+        "text": "I'm glad you wrote. That's all."
+      }
+    ],
+    "feeling_better": [
+      {
+        "id": "fb-1",
+        "text": "I'm glad it's a little lighter. We can go slowly from here."
+      },
+      {
+        "id": "fb-2",
+        "text": "That's good to hear. Nothing has to be decided today."
+      }
+    ],
+    "goodbye": [
+      {
+        "id": "gb-1",
+        "text": "Take care of yourself. This door stays open, no name needed."
+      },
+      {
+        "id": "gb-2",
+        "text": "Thank you for being here with me. Go gently."
+      }
+    ],
+    "reflective": [
+      {
+        "id": "rf-1",
+        "text": "I'm listening. Take your time."
+      },
+      {
+        "id": "rf-2",
+        "text": "Okay. I'm still here."
+      },
+      {
+        "id": "rf-3",
+        "text": "You can tell it in pieces. I'll wait."
+      },
+      {
+        "id": "rf-4",
+        "text": "I've read that. I'm not in a hurry."
+      },
+      {
+        "id": "rf-5",
+        "text": "That's a lot to hold on your own. You don't have to make it neat for me."
+      }
+    ],
+    "first_contact": [
+      {
+        "id": "fc-1",
+        "text": "I'm here. Nothing has to be explained properly, and there is no right way to start."
+      },
+      {
+        "id": "fc-2",
+        "text": "Hi. Whatever brought you here, you can put it down slowly. I'm not going anywhere."
+      }
+    ],
+    "stay": [
+      {
+        "id": "sy-1",
+        "text": "We can stay here. I'm not going anywhere."
+      },
+      {
+        "id": "sy-2",
+        "text": "I'm here for as long as you want to sit with this."
+      }
+    ],
+    "negated_risk": [
+      {
+        "id": "nr-1",
+        "text": "That's important to hear, and I believe you. The pain still sounds real, and it doesn't have to reach that point before it deserves attention."
+      },
+      {
+        "id": "nr-2",
+        "text": "Thank you for putting that clearly. Not wanting to die and wanting the pain to stop can both be true at once."
+      }
+    ]
+  },
+  "escalation": {
+    "copy": {
+      "offer_tier2": "I want you to have more than I can give. There are people trained for this, free, any hour. I can put their details on the screen, or we can stay here. Both are fine.",
+      "offer_tier3": "I'm going to be honest with you: I'm a small text guide, and you deserve a person. There are helplines that answer at any hour and cost nothing. I can show you now, or I can stay here with you while you decide.",
+      "declined": "That's completely fine. I'm still here.",
+      "accepted": "I've put them below. Nobody will call you, and nothing is shared unless you choose to share it.",
+      "still_here": "We can stay here. I'm not going anywhere."
+    },
+    "chips": [
+      "Show me who I can talk to",
+      "Stay here with me",
+      "I don't know what to say",
+      "Not right now",
+      "I'd like to breathe first"
+    ]
+  },
+  "grounding": {
+    "intro": "No pressure to do this well. We can stop in the middle.",
+    "steps": [
+      "Let your shoulders drop, wherever they are.",
+      "Breathe out a little longer than you breathe in.",
+      "Name five things you can see.",
+      "Let your back rest against something solid.",
+      "Nothing here has to be done right."
+    ]
+  }
+}

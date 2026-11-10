@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Observer view - Stillwater</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%236e8b75'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23faf8f3'/%3E%3C/svg%3E">
+</head>
+<body class="admin-page">
+<main class="admin" id="main">
+  <div class="admin-head">
+    <a class="wordmark" href="index.html" style="text-decoration:none;color:inherit">
+      <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="15" fill="none" stroke="#6e8b75" stroke-width="1.2"/>
+        <circle cx="16" cy="16" r="9" fill="none" stroke="#6e8b75" stroke-width="1" opacity=".55"/>
+        <circle cx="16" cy="16" r="3.5" fill="#6e8b75" opacity=".85"/>
+      </svg>
+      Stillwater
+    </a>
+    <span class="small">Aggregate only &middot; no message text is ever shown here</span>
+  </div>
+
+  <div id="lock" class="lock">
+    <h1 style="font-size:1.6rem">Observer view</h1>
+    <p class="small">For the evaluation section of the report. The passphrase is in <code>includes/config.php</code>.</p>
+    <input type="password" id="key" placeholder="passphrase" autocomplete="off" aria-label="Passphrase">
+    <button class="btn btn-primary btn-block" type="button" id="unlock">Open dashboard</button>
+    <p class="small" id="lock-msg" style="margin-top:.8rem"></p>
+  </div>
+
+  <div id="dash" hidden>
+    <div class="grid" id="cards"></div>
+
+    <div class="panel">
+      <h2>Highest level of concern reached in a conversation</h2>
+      <div id="tiers"></div>
+      <p class="small" style="margin-top:1rem">
+        Tier 0 steady &middot; 1 distress &middot; 2 high concern &middot; 3 imminent risk.
+        A conversation is counted at the highest tier it reached, not at its last message, because
+        a crisis does not cancel itself out.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>What people brought</h2>
+      <div id="cats"></div>
+      <p class="small" style="margin-top:1rem">
+        Categories only. The words themselves are not stored unless the person switched
+        on <em>keep my words</em>, and even then they never appear on this page.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Escalation handoffs</h2>
+      <div id="esc"></div>
+    </div>
+  </div>
+</main>
+
+<script src="assets/observer.js"></script>
+</body>
+</html>

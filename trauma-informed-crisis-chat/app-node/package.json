@@ -1,0 +1,17 @@
+{
+  "name": "stillwater",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Trauma-informed crisis helpline chat - a text support interface that refuses to add pressure, judgement or confusion.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/engine.test.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "keywords": ["mental-health", "crisis-support", "trauma-informed", "accessibility"],
+  "license": "MIT"
+}
